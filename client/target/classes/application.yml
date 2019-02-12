@@ -18,6 +18,3 @@ security:
       use-current-uri: false
     resource:
       user-info-uri: http://localhost:8101/oauth/user
-logging:
-  level:
-    root: debug

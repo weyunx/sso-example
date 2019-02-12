@@ -21,8 +21,6 @@ class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and()
                 .authorizeRequests()
-                //.antMatchers("/hi**")
-               // .hasAnyRole("ANONYMOUS")
                 .anyRequest().authenticated();
     }
 

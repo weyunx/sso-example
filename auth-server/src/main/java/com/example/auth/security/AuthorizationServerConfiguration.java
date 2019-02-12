@@ -26,12 +26,13 @@ class AuthorizationServerConfiguration extends AuthorizationServerConfigurerAdap
 
     @Override
     public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
-        //配置两个客户端,一个用于password认证一个用于client认证
-        clients.inMemory().withClient("client")
-                .resourceIds("hi")
-                .authorizedGrantTypes("password","authorization_code","refresh_token")
-                .scopes("read")
-                .secret(encoder.encode("123456"));
+        //配置客户端
+        clients
+                .inMemory()
+                .withClient("client")
+                .secret(encoder.encode("123456")).resourceIds("hi")
+                .authorizedGrantTypes("password","refresh_token")
+                .scopes("read");
     }
 
     @Override
